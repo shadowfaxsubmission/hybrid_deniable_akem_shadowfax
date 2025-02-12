@@ -1,4 +1,6 @@
 
+
+
 #include "cycles.h"
 
 #ifdef __APPLE__
@@ -1019,7 +1021,7 @@ void init_counter(void){
     init_counters();
 }
 
-#else /* __APPLE__ */
+#else
 
 #ifdef __ARM_ARCH_ISA_A64
 
@@ -1031,7 +1033,7 @@ uint64_t get_cycle(void){
   return t;
 }
 
-#else /* __ARM_ARCH_ISA_A64 */
+#else
 
 void init_counter(void){return;}
 
@@ -1044,9 +1046,8 @@ uint64_t get_cycle(void) {
   return result;
 }
 
-#endif /* __APPLE__ */
-
 #endif /* __ARM_ARCH_ISA_A64 */
 
+#endif /* __APPLE__ */
 
 
